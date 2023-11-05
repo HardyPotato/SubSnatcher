@@ -27,21 +27,18 @@ pip install requests
 First, clone this repository to your local machine:
 
 ```shell
-Copy code
 git clone https://github.com/<your-github-username>/subtitle-downloader.git
 ```
 
 Navigate to the directory where you cloned the repository:
 
 ```shell
-Copy code
 cd subtitle-downloader
 ```
 
 Run the application:
 
 ```shell
-Copy code
 python subtitle_downloader.py
 ```
 
