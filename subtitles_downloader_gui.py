@@ -73,21 +73,27 @@ class SubtitleDownloaderApp:
 
         subtitle = self.subtitles_list[selection[0]]
         subtitle_url = subtitle["ZipDownloadLink"]
-        movie_name = subtitle["SubFileName"]
-
+        
+        # Use the movie name entered by the user to construct the file name, ensuring it ends with .zip
+        movie_name = self.entry.get()
+        safe_movie_name = "".join([c for c in movie_name if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+        
         download_dir = simpledialog.askstring("Download Directory", "Enter download directory:", initialvalue=r"D:\Desktop")
         if not download_dir:
             messagebox.showwarning("No Directory", "No download directory specified.")
             return
 
-        response = requests.get(subtitle_url)
-        file_path = os.path.join(download_dir, movie_name)
-        with open(file_path, "wb") as f:
-            f.write(response.content)
+        file_path = os.path.join(download_dir, f"{safe_movie_name}.zip")
 
-        messagebox.showinfo("Download Complete", f"Subtitle downloaded to: {file_path}")
-
-        self.client.LogOut(self.token)
+        try:
+            response = requests.get(subtitle_url)
+            with open(file_path, "wb") as f:
+                f.write(response.content)
+            messagebox.showinfo("Download Complete", f"Subtitle downloaded to: {file_path}")
+        except Exception as e:
+            messagebox.showerror("Download Failed", str(e))
+        finally:
+            self.client.LogOut(self.token)
 
 if __name__ == "__main__":
     root = tk.Tk()
