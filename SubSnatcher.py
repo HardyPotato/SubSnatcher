@@ -8,7 +8,7 @@ import xmlrpc.client
 class SubtitleDownloaderApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Subtitle Downloader")
+        self.root.title("SubSnatcher")
         
         # OpenSubtitles API user agent
         self.user_agent = "Wget/1.19.4 (linux-gnu)"
