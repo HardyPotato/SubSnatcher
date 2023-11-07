@@ -27,19 +27,19 @@ pip install requests
 First, clone this repository to your local machine:
 
 ```shell
-git clone https://github.com/<your-github-username>/subtitle-downloader.git
+git clone https://github.com/HardyPotato/SubSnatcher.git
 ```
 
 Navigate to the directory where you cloned the repository:
 
 ```shell
-cd subtitle-downloader
+cd SubSnatcher
 ```
 
 Run the application:
 
 ```shell
-python subtitle_downloader.py
+python SubSnatcher.py
 ```
 
 The GUI should appear where you can start interacting with the application.
