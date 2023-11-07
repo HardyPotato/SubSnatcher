@@ -43,6 +43,7 @@ Run the application:
 ```shell
 python SubSnatcher.py
 ```
+Or you can just download the compiled .exe version.
 
 The GUI should appear where you can start interacting with the application.
 
