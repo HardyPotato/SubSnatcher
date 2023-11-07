@@ -9,6 +9,8 @@ Subtitle Downloader is a Python-based graphical user interface (GUI) application
 - **Download**: Select and download subtitles to your computer.
 - **GUI**: A simple and intuitive graphical interface.
 
+![image](https://github.com/HardyPotato/SubSnatcher/assets/90766229/36932a54-4c6e-42ed-bc71-7847c81c3896)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
