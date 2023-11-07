@@ -20,19 +20,26 @@ class SubtitleDownloaderApp:
         self.setup_grid()
 
     def create_widgets(self):
-        self.label = tk.Label(self.root, text="Enter Movie Name:")
+        self.root.configure(bg='#343a40')  # Set the background color of the window
+
+        self.label = tk.Label(self.root, text="Enter Movie Name:", bg='#343a40', fg='white')
         self.label.grid(row=0, column=0, sticky="ew")
 
-        self.entry = tk.Entry(self.root)
+        self.entry = tk.Entry(self.root, bg='#495057', fg='white', insertbackground='white')
         self.entry.grid(row=0, column=1, sticky="ew")
+        self.entry.bind("<Return>", lambda event: self.search_subtitles())
 
-        self.search_button = tk.Button(self.root, text="Search Subtitles", command=self.search_subtitles)
+        self.search_button = tk.Button(self.root, text="Search Subtitles", 
+                                       command=self.search_subtitles,
+                                       cursor="hand2", bg='#495057', fg='white')
         self.search_button.grid(row=0, column=2, sticky="ew")
 
-        self.subtitle_listbox = tk.Listbox(self.root)
+        self.subtitle_listbox = tk.Listbox(self.root, bg='#495057', fg='white')
         self.subtitle_listbox.grid(row=1, column=0, columnspan=3, sticky="nsew")
 
-        self.download_button = tk.Button(self.root, text="Download Selected Subtitle", command=self.download_subtitle)
+        self.download_button = tk.Button(self.root, text="Download Selected Subtitle", 
+                                       command=self.download_subtitle,
+                                       cursor="hand2", bg='#495057', fg='white')
         self.download_button.grid(row=2, column=0, columnspan=3, sticky="ew")
 
     def setup_grid(self):
